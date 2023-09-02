@@ -14,6 +14,7 @@ holybiblelines = holybiblelines[2:]
 async def ctfinfo(interaction):
     await interaction.response.send_message("done", ephemeral=True)
     for line in holybiblelines:
+        print(line.split("\t")[0])
         await interaction.channel.send("# **" + line.upper().split("\t")[1] + "**")
         sleep(0.1)
 
