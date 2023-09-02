@@ -12,10 +12,10 @@ holybiblelines = holybible.split("\n")
 holybiblelines = holybiblelines[2:]
 @tree.command(name="holybible", description="Amen.")
 async def ctfinfo(interaction):
+    await interaction.response.send_message("done", ephemeral=True)
     for line in holybiblelines:
-        await interaction.channel.send(line.split("\t")[1])
-        sleep(2)
-    await interaction.response.send_message("done")
+        await interaction.channel.send("# **" + line.upper().split("\t")[1] + "**")
+        sleep(0.1)
 
 @client.event
 async def on_message(message):
